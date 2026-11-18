@@ -2,6 +2,8 @@
     <div class="text-center py-2 mb-1 border-bottom border-secondary">
         <a class="navbar-brand fw-bold" href="<?= base_url('app/index') ?>">
             <i class="fas fa-cubes me-0 fw-bold text-primary"></i> <?= get_setting('site_title') ?> </br>
+            <small class="text-muted">App Paneli</small>
+        </a>
     </div>
     <ul class="nav flex-column">
         <?php 

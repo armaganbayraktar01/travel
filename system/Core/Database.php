@@ -9,12 +9,11 @@ class Database {
 
     public static function getInstance(): PDO {
         if (self::$instance === null) {
-            // Basit bir .env okuyucu mantığı veya sabitler kullanılabilir
-            $host = 'localhost';
-            $db   = 'manager_db';
-            $user = 'root';
-            $pass = '';
-            $charset = 'utf8mb4';
+            $host    = env('DB_HOST', 'localhost');
+            $db      = env('DB_NAME', 'manager_db');
+            $user    = env('DB_USER', 'root');
+            $pass    = env('DB_PASS', '');
+            $charset = env('DB_CHARSET', 'utf8mb4');
 
             $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
             $options = [

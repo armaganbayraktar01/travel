@@ -1,8 +1,14 @@
 <?php
 
+if (!function_exists('env')) {
+    function env(string $key, $default = null) {
+        return $_ENV[$key] ?? $default;
+    }
+}
+
 if (!function_exists('base_url')) {
     function base_url(string $path = ''): string {
-        $baseUrl = 'http://localhost/manager';
+        $baseUrl = rtrim(env('BASE_URL', 'http://localhost/manager'), '/');
         return $baseUrl . ($path ? '/' . ltrim($path, '/') : '');
     }
 }

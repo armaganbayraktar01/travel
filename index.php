@@ -31,6 +31,11 @@ spl_autoload_register(function ($class) {
 // Yardımcı fonksiyonları dahil et
 require_once __DIR__ . '/system/Helpers/functions.php';
 
+
+use System\Core\Env;
+// .env dosyasını global olarak yükle (index.php kök dizindeyse __DIR__ . '/.env' yapın)
+Env::load(__DIR__ . '/.env');
+
 // Router sınıfını başlat
 use System\Core\Router;
 
